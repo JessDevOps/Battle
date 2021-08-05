@@ -11,8 +11,9 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    p params[:'Player 1']
-    p params[:'Player 2']
+    @player_1 = params[:player_1]
+    @player_2 = params[:player_2]
+    erb :play
   end
 
   # start the server if ruby file executed directly

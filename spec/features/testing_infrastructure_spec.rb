@@ -1,4 +1,4 @@
-require '/Users/Student/Projects/Battle/app.rb'
+require '/Users/manu/Projects/Battle/app.rb'
 # require '/Users/Student/Projects/Battle/views/index.erb'
 
 feature "Testing Infrastructure" do
@@ -9,10 +9,10 @@ feature "Testing Infrastructure" do
 
   scenario 'two players can add their names for a personalised game' do
     visit "/"
-    fill_in('Player 1', with: 'Jess')
-    fill_in('Player 2', with: 'Manu')
+    fill_in('player_1', with: 'Jess')
+    fill_in('player_2', with: 'Manu')
     click_on('Submit')
-    expect('/names').to have_text("Jess", "Manu")
+    expect(page).to have_content "Jess vs. Manu"
   end
 
 
